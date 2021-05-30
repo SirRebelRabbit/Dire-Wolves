@@ -14,9 +14,18 @@ and in turn give out in equal to what they have received.
 Legends say that bigger groups of Garmr will become stronger in order to better protect their masters.</description>
 		<thingClass>DireWolves.DireWolf</thingClass>
 		<statBases>
-			<MoveSpeed>5.0</MoveSpeed>
+			<MoveSpeed>7.0</MoveSpeed>
+			<ImmunityGainSpeed>2</ImmunityGainSpeed>
 			<MarketValue>450</MarketValue>
-			<ComfyTemperatureMin>-40</ComfyTemperatureMin>
+			<ComfyTemperatureMin>-100</ComfyTemperatureMin>
+			<ComfyTemperatureMax>120</ComfyTemperatureMax>
+			<ArmorRating_Blunt>.9</ArmorRating_Blunt>
+			<ArmorRating_Sharp>1.0</ArmorRating_Sharp>
+			<ArmorRating_Heat>1.2</ArmorRating_Heat>
+			<PainShockThreshold>.85</PainShockThreshold>
+			<PsychicSensitivity>1.5</PsychicSensitivity>
+			<ToxicSensitivity>0.15</ToxicSensitivity>
+			<Flammability>0.1</Flammability>
 		</statBases>
 		<tools>
 			<li>
@@ -24,14 +33,14 @@ Legends say that bigger groups of Garmr will become stronger in order to better 
 				<capacities>
 					<li>Scratch</li>
 				</capacities>
-				<power>13</power>
+				<power>17</power>
 				<cooldownTime>1.5</cooldownTime>
 				<linkedBodyPartsGroup>FrontLeftPaw</linkedBodyPartsGroup>
 				<surpriseAttack>
 					<extraMeleeDamages>
 						<li>
 							<def>Stun</def>
-							<amount>14</amount>
+							<amount>16</amount>
 						</li>
 					</extraMeleeDamages>
 				</surpriseAttack>
@@ -41,14 +50,14 @@ Legends say that bigger groups of Garmr will become stronger in order to better 
 				<capacities>
 					<li>Scratch</li>
 				</capacities>
-				<power>13</power>
+				<power>17</power>
 				<cooldownTime>1.5</cooldownTime>
 				<linkedBodyPartsGroup>FrontRightPaw</linkedBodyPartsGroup>
 				<surpriseAttack>
 					<extraMeleeDamages>
 						<li>
 							<def>Stun</def>
-							<amount>14</amount>
+							<amount>16</amount>
 						</li>
 					</extraMeleeDamages>
 				</surpriseAttack>
@@ -58,7 +67,7 @@ Legends say that bigger groups of Garmr will become stronger in order to better 
 				<capacities>
 					<li>Bite</li>
 				</capacities>
-				<power>15</power>
+				<power>20</power>
 				<cooldownTime>2</cooldownTime>
 				<linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
 				<chanceFactor>0.9</chanceFactor>
@@ -66,7 +75,7 @@ Legends say that bigger groups of Garmr will become stronger in order to better 
 					<extraMeleeDamages>
 						<li>
 							<def>Stun</def>
-							<amount>14</amount>
+							<amount>17</amount>
 						</li>
 					</extraMeleeDamages>
 				</surpriseAttack>
@@ -76,7 +85,7 @@ Legends say that bigger groups of Garmr will become stronger in order to better 
 				<capacities>
 					<li>Blunt</li>
 				</capacities>
-				<power>5</power>
+				<power>12</power>
 				<cooldownTime>2</cooldownTime>
 				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
 				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
@@ -86,15 +95,15 @@ Legends say that bigger groups of Garmr will become stronger in order to better 
 		<race>
 			<body>QuadrupedAnimalWithPawsAndTail</body>
 			<predator>true</predator>
-			<maxPreyBodySize>2.3</maxPreyBodySize>
+			<maxPreyBodySize>3</maxPreyBodySize>
 			<thinkTreeMain>DW_PredatorPack</thinkTreeMain>
 			<petness>0.5</petness>
-			<baseBodySize>1.0</baseBodySize>
-			<baseHungerRate>0.25</baseHungerRate>
-			<baseHealthScale>1.4</baseHealthScale>
+			<baseBodySize>4</baseBodySize>
+			<baseHungerRate>1</baseHungerRate>
+			<baseHealthScale>10</baseHealthScale>
 			<foodType>CarnivoreAnimalStrict</foodType>
 			<leatherDef>Leather_Wolf</leatherDef>
-			<gestationPeriodDays>26</gestationPeriodDays>
+			<gestationPeriodDays>60</gestationPeriodDays>
 			<nameOnTameChance>1</nameOnTameChance>
 			<trainability>Advanced</trainability>
 			<wildness>0.60</wildness>
@@ -116,7 +125,7 @@ Legends say that bigger groups of Garmr will become stronger in order to better 
 					<li>(3, 0)</li>
 				</points>
 			</litterSizeCurve>
-			<lifeExpectancy>15</lifeExpectancy>
+			<lifeExpectancy>500</lifeExpectancy>
 			<lifeStageAges>
 				<li>
 					<def>AnimalBaby</def>
@@ -124,11 +133,11 @@ Legends say that bigger groups of Garmr will become stronger in order to better 
 				</li>
 				<li>
 					<def>AnimalJuvenile</def>
-					<minAge>0.2</minAge>
+					<minAge>2</minAge>
 				</li>
 				<li>
 					<def>AnimalAdult</def>
-					<minAge>0.45</minAge>
+					<minAge>5</minAge>
 					<soundWounded>Pawn_Warg_Wounded</soundWounded>
 					<soundDeath>Pawn_Warg_Death</soundDeath>
 					<soundCall>Pawn_Warg_Call</soundCall>
@@ -140,8 +149,7 @@ Legends say that bigger groups of Garmr will become stronger in order to better 
 			<soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
 		</race>
 		<tradeTags>
-			<li>AnimalUncommon</li>
-			<li>AnimalFighter</li>
+			<li>AnimalExotic</li>
 		</tradeTags>
 	</ThingDef>
 
@@ -149,13 +157,13 @@ Legends say that bigger groups of Garmr will become stronger in order to better 
 		<defName>DW_Garmr</defName>
 		<label>garmr</label>
 		<race>DW_Garmr</race>
-		<combatPower>160</combatPower>
+		<combatPower>1230</combatPower>
 		<ecoSystemWeight>1.1</ecoSystemWeight>
 		<wildGroupSize>3~9</wildGroupSize>
 		<lifeStages>
 			<li>
-				<label>warg puppy</label>
-				<labelPlural>warg puppies</labelPlural>
+				<label>baby Garmr pup</label>
+				<labelPlural>baby Garmr puppies</labelPlural>
 				<bodyGraphicData>
 					<texPath>Things/Pawn/Animal/Garmr/Garmr</texPath>
 					<drawSize>2.05</drawSize>
