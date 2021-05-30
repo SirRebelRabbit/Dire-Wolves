@@ -14,6 +14,24 @@ namespace DireWolves
     {
 		public bool isPackLeader;
 
+        public override void PreApplyDamage(ref DamageInfo dinfo, out bool absorbed)
+        {
+            base.PreApplyDamage(ref dinfo, out absorbed);
+			if (dinfo.Instigator is Pawn pawn)
+            {
+				foreach (var packMate in GetPackmates(24))
+                {
+					if (packMate.CurJobDef != JobDefOf.AttackMelee)
+                    {
+						packMate.jobs.TryTakeOrderedJob(JobMaker.MakeJob(JobDefOf.AttackMelee, pawn));
+						if (pawn.Position.DistanceTo(packMate.Position) <= 25 && packMate.CanHowl())
+						{
+							packMate.DoHowl();
+						}
+					}
+                }
+            }
+        }
         public override void Tick()
         {
             base.Tick();
@@ -77,7 +95,7 @@ namespace DireWolves
             {
 				yield return g;
             }
-			if (this.isPackLeader && this.Faction.IsPlayer)
+			if (this.isPackLeader)// && (this.Faction?.IsPlayer ?? false))
             {
 				yield return new Command_Toggle
 				{
@@ -109,13 +127,19 @@ namespace DireWolves
 		private int lastHowlTick;
 		public bool CanHowl()
         {
-			return this.isPackLeader && howlingEnabled && Find.TickManager.TicksGame >= lastHowlTick + DireWolvesMod.settings.howlingCooldownTicks;
+			if (this.isPackLeader)
+            {
+				Log.Message("Find.TickManager.TicksGame: " + Find.TickManager.TicksGame);
+				Log.Message("lastHowlTick: " + lastHowlTick);
+				Log.Message(" DireWolvesMod.settings.howlingCooldownTicks: " + DireWolvesMod.settings.howlingCooldownTicks);
+			}
+			return this.isPackLeader && (lastHowlTick <= 0 ||Find.TickManager.TicksGame >= lastHowlTick + DireWolvesMod.settings.howlingCooldownTicks);
 		}
 
 		public void DoHowl()
         {
 			var packMates = this.GetPackmates(24);
-			foreach (var pawn in GenRadial.RadialDistinctThingsAround(this.Position, this.Map, 15, true).OfType<Pawn>())
+			foreach (var pawn in GenRadial.RadialDistinctThingsAround(this.Position, this.Map, 25, true).OfType<Pawn>())
             {
 				if (pawn.def != this.def)
                 {
@@ -130,6 +154,7 @@ namespace DireWolves
                 }
             }
 			this.lastHowlTick = Find.TickManager.TicksGame;
+			Log.Message("HOwnling");
         }
 
 		public void MakeFlee(Pawn pawn, Thing danger, int radius, List<Thing> dangers)

@@ -158,18 +158,18 @@ Legends say that bigger groups of Garmr will become stronger in order to better 
 				<labelPlural>warg puppies</labelPlural>
 				<bodyGraphicData>
 					<texPath>Things/Pawn/Animal/Garmr/Garmr</texPath>
-					<drawSize>1.05</drawSize>
+					<drawSize>2.05</drawSize>
 					<color>(123,104,89)</color>
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
 					<texPath>Things/Pawn/Animal/Warg/Dessicated_Warg</texPath>
-					<drawSize>1.05</drawSize>
+					<drawSize>2.05</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
 			<li>
 				<bodyGraphicData>
 					<texPath>Things/Pawn/Animal/Garmr/Garmr</texPath>
-					<drawSize>1.7</drawSize>
+					<drawSize>4.7</drawSize>
 					<color>(123,104,89)</color>
 					<shadowData>
 						<volume>(0.25, 0.3, 0.25)</volume>
@@ -178,13 +178,13 @@ Legends say that bigger groups of Garmr will become stronger in order to better 
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
 					<texPath>Things/Pawn/Animal/Warg/Dessicated_Warg</texPath>
-					<drawSize>1.7</drawSize>
+					<drawSize>4.7</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
 			<li>
 				<bodyGraphicData>
 					<texPath>Things/Pawn/Animal/Garmr/Garmr</texPath>
-					<drawSize>2.05</drawSize>
+					<drawSize>5.05</drawSize>
 					<color>(123,104,89)</color>
 					<shadowData>
 						<volume>(0.3, 0.4, 0.3)</volume>
@@ -193,7 +193,7 @@ Legends say that bigger groups of Garmr will become stronger in order to better 
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
 					<texPath>Things/Pawn/Animal/Warg/Dessicated_Warg</texPath>
-					<drawSize>2.05</drawSize>
+					<drawSize>5.05</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
 		</lifeStages>

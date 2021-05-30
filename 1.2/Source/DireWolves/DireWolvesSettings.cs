@@ -14,13 +14,13 @@ namespace DireWolves
 {
     class DireWolvesSettings : ModSettings
     {
-        public float packSizeBonus;
+        public float packSizeBonus = 0.1f;
 
-        public int howlingCooldownTicks;
+        public int howlingCooldownTicks = 2500;
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_Values.Look(ref packSizeBonus, "packSizeBonus");
+            Scribe_Values.Look(ref packSizeBonus, "packSizeBonus", 0.1f);
             Scribe_Values.Look(ref howlingCooldownTicks, "howlingCooldownTicks", 2500);
         }
 
@@ -28,9 +28,9 @@ namespace DireWolves
         {
             Listing_Standard listingStandard = new Listing_Standard();
             listingStandard.Begin(inRect);
-            listingStandard.Label("PackSizeBonus".Translate());
+            listingStandard.Label("PackSizeBonus".Translate() + ": " + packSizeBonus);
             packSizeBonus = listingStandard.Slider(packSizeBonus, 0, 100);
-            listingStandard.Label("HowlingCooldownTicks".Translate());
+            listingStandard.Label("HowlingCooldownTicks".Translate() + ": " + howlingCooldownTicks);
             howlingCooldownTicks = (int)listingStandard.Slider(howlingCooldownTicks, 0, 10000);
 
             listingStandard.End();

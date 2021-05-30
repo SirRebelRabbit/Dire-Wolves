@@ -56,15 +56,60 @@ namespace DireWolves
 		}
 	}
 
-	[HarmonyPatch(typeof(JobGiver_AIFightEnemy), "TryGiveJob")]
-	internal static class TryGiveJob_Patch
+	[HarmonyPatch(typeof(JobGiver_Manhunter), "TryGiveJob")]
+	internal static class JobGiver_Manhunter_Patch
 	{
-		private static void Postfix(ref JobGiver_AIFightEnemy __instance, Job __result, Pawn pawn)
+		private static void Postfix(Job __result, Pawn pawn)
 		{
-			if (__result != null && pawn is DireWolf direWolf && __result != null && __result.def == JobDefOf.AttackMelee 
-				&& __result.targetA.Thing is Pawn victim && victim.Position.DistanceTo(pawn.Position) <= 15 && direWolf.CanHowl())
+			if (__result != null && pawn is DireWolf direWolf)
+			{
+				if (__result.def == JobDefOf.AttackMelee && __result.targetA.Thing is Pawn victim && victim.Position.DistanceTo(pawn.Position) <= 25 && direWolf.CanHowl())
+				{
+					direWolf.DoHowl();
+				}
+			}
+		}
+	}
+
+	
+	[HarmonyPatch(typeof(JobGiver_ReactToCloseMeleeThreat), "TryGiveJob")]
+	internal static class JobGiver_ReactToCloseMeleeThreat_Patch
+	{
+		private static void Postfix(Job __result, Pawn pawn)
+		{
+			if (__result != null && pawn is DireWolf direWolf)
+			{
+				if (__result.def == JobDefOf.AttackMelee && __result.targetA.Thing is Pawn victim && victim.Position.DistanceTo(pawn.Position) <= 25 && direWolf.CanHowl())
+				{
+					direWolf.DoHowl();
+				}
+			}
+		}
+	}
+
+	[HarmonyPatch(typeof(JobGiver_AIFightEnemy), "TryGiveJob")]
+	internal static class JobGiver_AIFightEnemy_Patch
+	{
+		private static void Postfix(Job __result, Pawn pawn)
+		{
+			if (__result != null && pawn is DireWolf direWolf)
             {
-				direWolf.DoHowl();
+				if (__result.def == JobDefOf.AttackMelee && __result.targetA.Thing is Pawn victim && victim.Position.DistanceTo(pawn.Position) <= 25 && direWolf.CanHowl())
+                {
+					direWolf.DoHowl();
+				}
+			}
+		}
+	}
+	
+	[HarmonyPatch(typeof(ThinkNode_JobGiver), "TryIssueJobPackage")]
+	public class TryIssueJobPackage
+	{
+		private static void Postfix(ThinkNode_JobGiver __instance, ThinkResult __result, Pawn pawn, JobIssueParams jobParams)
+		{
+			if (pawn is DireWolf direWolf && __result.Job != null)
+			{
+				Log.Message(pawn + " gets " + __result.Job + " from " + __instance);
 			}
 		}
 	}
