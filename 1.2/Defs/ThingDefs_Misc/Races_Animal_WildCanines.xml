@@ -129,7 +129,7 @@ A howl from the pack alpha will cause those who hear it, to become stunned with 
 					<li>(3, 0)</li>
 				</points>
 			</litterSizeCurve>
-			<lifeExpectancy>500</lifeExpectancy>
+			<lifeExpectancy>120</lifeExpectancy>
 			<lifeStageAges>
 				<li>
 					<def>AnimalBaby</def>
