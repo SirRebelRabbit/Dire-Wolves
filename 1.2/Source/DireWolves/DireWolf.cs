@@ -96,7 +96,7 @@ namespace DireWolves
             {
 				yield return g;
             }
-			if (this.isPackLeader)// && (this.Faction?.IsPlayer ?? false))
+			if (this.isPackLeader && (this.Faction?.IsPlayer ?? false))
             {
 				yield return new Command_Toggle
 				{
