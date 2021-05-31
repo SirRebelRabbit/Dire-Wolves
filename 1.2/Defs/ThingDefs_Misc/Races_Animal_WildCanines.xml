@@ -8,10 +8,14 @@
 		<label>garmr</label>
 		<description>A bio engineered wolf of an ancient civilisation, bred for the purposes of protecting their masters, 
 Garmr wolves were based on an ancient legend of a guardian to the land of the fallen.
+
 Garmr wolves are fiercely loyal once they have submitted to a master and will protect them with their entire being.
 having being bred and engineered with the sole purpose of protection, Garmr are able to take a massive amount of punishment
 and in turn give out in equal to what they have received.
-Legends say that bigger groups of Garmr will become stronger in order to better protect their masters.</description>
+
+Legends say that bigger groups of Garmr will become stronger in order to better protect their masters.
+A howl from the pack alpha will cause those who hear it, to become stunned with fear.
+</description>
 		<thingClass>DireWolves.DireWolf</thingClass>
 		<statBases>
 			<MoveSpeed>7.0</MoveSpeed>
