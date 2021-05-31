@@ -133,11 +133,11 @@ Legends say that bigger groups of Garmr will become stronger in order to better 
 				</li>
 				<li>
 					<def>AnimalJuvenile</def>
-					<minAge>2</minAge>
+					<minAge>5</minAge>
 				</li>
 				<li>
 					<def>AnimalAdult</def>
-					<minAge>5</minAge>
+					<minAge>20</minAge>
 					<soundWounded>Pawn_Warg_Wounded</soundWounded>
 					<soundDeath>Pawn_Warg_Death</soundDeath>
 					<soundCall>Pawn_Warg_Call</soundCall>
