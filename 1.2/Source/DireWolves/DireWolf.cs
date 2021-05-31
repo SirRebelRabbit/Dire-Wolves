@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 using Verse;
 using Verse.AI;
 
@@ -17,14 +18,14 @@ namespace DireWolves
         public override void PreApplyDamage(ref DamageInfo dinfo, out bool absorbed)
         {
             base.PreApplyDamage(ref dinfo, out absorbed);
-			if (dinfo.Instigator is Pawn pawn)
+			if (dinfo.Instigator != null)
             {
 				foreach (var packMate in GetPackmates(24))
                 {
 					if (packMate.CurJobDef != JobDefOf.AttackMelee)
                     {
-						packMate.jobs.TryTakeOrderedJob(JobMaker.MakeJob(JobDefOf.AttackMelee, pawn));
-						if (pawn.Position.DistanceTo(packMate.Position) <= 25 && packMate.CanHowl())
+						packMate.jobs.TryTakeOrderedJob(JobMaker.MakeJob(JobDefOf.AttackMelee, dinfo.Instigator));
+						if (dinfo.Instigator.Position.DistanceTo(packMate.Position) <= 25 && packMate.CanHowl())
 						{
 							packMate.DoHowl();
 						}
@@ -101,6 +102,7 @@ namespace DireWolves
 				{
 					defaultLabel = "DW.EnableHowling".Translate(),
 					defaultDesc = "DW.EnableHowlingDesc".Translate(),
+					icon = ContentFinder<Texture2D>.Get("UI/Icons/EnableHowl"),
 					isActive = () => howlingEnabled,
 					toggleAction = delegate
 					{
@@ -113,6 +115,7 @@ namespace DireWolves
 					{
 						defaultLabel = "DW.Howl".Translate(),
 						defaultDesc = "DW.HowlDesc".Translate(),
+						icon = ContentFinder<Texture2D>.Get("UI/Icons/Howl"),
 						disabled = !CanHowl(),
 						action = delegate
 						{
@@ -127,12 +130,6 @@ namespace DireWolves
 		private int lastHowlTick;
 		public bool CanHowl()
         {
-			if (this.isPackLeader)
-            {
-				Log.Message("Find.TickManager.TicksGame: " + Find.TickManager.TicksGame);
-				Log.Message("lastHowlTick: " + lastHowlTick);
-				Log.Message(" DireWolvesMod.settings.howlingCooldownTicks: " + DireWolvesMod.settings.howlingCooldownTicks);
-			}
 			return this.isPackLeader && (lastHowlTick <= 0 ||Find.TickManager.TicksGame >= lastHowlTick + DireWolvesMod.settings.howlingCooldownTicks);
 		}
 
@@ -154,8 +151,9 @@ namespace DireWolves
                 }
             }
 			this.lastHowlTick = Find.TickManager.TicksGame;
-			Log.Message("HOwnling");
-        }
+			var def = DefDatabase<AnimationDef>.GetNamed("DW_Mote_Howl");
+			MoteMaker.MakeStaticMote(this.DrawPos, this.Map, def);
+		}
 
 		public void MakeFlee(Pawn pawn, Thing danger, int radius, List<Thing> dangers)
 		{
@@ -180,7 +178,6 @@ namespace DireWolves
 			}
 			if (job != null)
 			{
-				//Log.Message(pawn + " flee");
 				pawn.jobs.TryTakeOrderedJob(job);
 			}
 		}
@@ -192,4 +189,21 @@ namespace DireWolves
 			Scribe_Values.Look(ref howlingEnabled, "howlingEnabled");
 		}
 	}
+
+	public class HowlAnimation : Mote_Animation
+    {
+		public override void OnCycle_Completion()
+		{
+			destroy = true;
+		}
+
+        public override void Tick()
+        {
+            base.Tick();
+			if (this.destroy)
+            {
+				this.Destroy();
+            }
+        }
+    }
 }

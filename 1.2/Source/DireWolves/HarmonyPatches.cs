@@ -93,23 +93,11 @@ namespace DireWolves
 		private static void Postfix(Job __result, Pawn pawn)
 		{
 			if (__result != null && pawn is DireWolf direWolf)
-            {
+			{
 				if (__result.def == JobDefOf.AttackMelee && __result.targetA.Thing is Pawn victim && victim.Position.DistanceTo(pawn.Position) <= 25 && direWolf.CanHowl())
-                {
+				{
 					direWolf.DoHowl();
 				}
-			}
-		}
-	}
-	
-	[HarmonyPatch(typeof(ThinkNode_JobGiver), "TryIssueJobPackage")]
-	public class TryIssueJobPackage
-	{
-		private static void Postfix(ThinkNode_JobGiver __instance, ThinkResult __result, Pawn pawn, JobIssueParams jobParams)
-		{
-			if (pawn is DireWolf direWolf && __result.Job != null)
-			{
-				Log.Message(pawn + " gets " + __result.Job + " from " + __instance);
 			}
 		}
 	}

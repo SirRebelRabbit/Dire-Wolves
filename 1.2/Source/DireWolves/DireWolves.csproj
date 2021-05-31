@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="DireWolf.cs" />
     <Compile Include="DireWolvesMod.cs" />
+    <Compile Include="DireWolves.cs" />
     <Compile Include="JobGiver_WanderPredatorPack.cs" />
     <Compile Include="DireWolvesSettings.cs" />
     <Compile Include="HarmonyPatches.cs" />

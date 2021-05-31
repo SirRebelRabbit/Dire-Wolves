@@ -3,4 +3,8 @@
 
 	<PackSizeBonus>Pack size bonus</PackSizeBonus>
 	<HowlingCooldownTicks>Howling cooldown ticks</HowlingCooldownTicks>
+	<DW.Howl>Howl</DW.Howl>
+	<DW.HowlDesc>Placeholder</DW.HowlDesc>
+	<DW.EnableHowling>Enable howling</DW.EnableHowling>
+	<DW.EnableHowlingDesc>Placeholder</DW.EnableHowlingDesc>
 </LanguageData>
