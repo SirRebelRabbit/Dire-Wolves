@@ -20,7 +20,7 @@ A howl from the pack alpha will cause those who hear it, to become stunned with 
 		<statBases>
 			<MoveSpeed>7.0</MoveSpeed>
 			<ImmunityGainSpeed>2</ImmunityGainSpeed>
-			<MarketValue>450</MarketValue>
+			<MarketValue>1550</MarketValue>
 			<ComfyTemperatureMin>-100</ComfyTemperatureMin>
 			<ComfyTemperatureMax>120</ComfyTemperatureMax>
 			<ArmorRating_Blunt>.9</ArmorRating_Blunt>
@@ -129,7 +129,7 @@ A howl from the pack alpha will cause those who hear it, to become stunned with 
 					<li>(3, 0)</li>
 				</points>
 			</litterSizeCurve>
-			<lifeExpectancy>120</lifeExpectancy>
+			<lifeExpectancy>110</lifeExpectancy>
 			<lifeStageAges>
 				<li>
 					<def>AnimalBaby</def>
