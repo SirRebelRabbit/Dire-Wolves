@@ -14,8 +14,7 @@ having being bred and engineered with the sole purpose of protection, Garmr are 
 and in turn give out in equal to what they have received.
 
 Legends say that bigger groups of Garmr will become stronger in order to better protect their masters.
-A howl from the pack alpha will cause those who hear it, to become stunned with fear.
-</description>
+A howl from the pack alpha will cause those who hear it, to become stunned with fear.</description>
 		<thingClass>DireWolves.DireWolf</thingClass>
 		<statBases>
 			<MoveSpeed>7.0</MoveSpeed>
