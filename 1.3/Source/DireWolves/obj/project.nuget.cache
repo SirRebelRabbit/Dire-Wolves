@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "xk3PPKRl2x72Q9ClrONfbbE5+NYiI/L5oXkYuvw0Vi/gc77ATuBEpD1f9N5JvXxpvCxAuiPvH4Kv8RN5quCUqw==",
+  "success": true,
+  "projectFilePath": "C:\\Games\\Rimworld\\Mods\\Dire-Wolves\\1.3\\Source\\DireWolves\\DireWolves.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Vova\\.nuget\\packages\\krafs.rimworld.ref\\1.3.3050-beta\\krafs.rimworld.ref.1.3.3050-beta.nupkg.sha512",
+    "C:\\Users\\Vova\\.nuget\\packages\\lib.harmony\\2.0.4\\lib.harmony.2.0.4.nupkg.sha512"
+  ],
+  "logs": []
+}
