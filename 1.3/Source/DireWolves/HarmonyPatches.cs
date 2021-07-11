@@ -44,7 +44,7 @@ namespace DireWolves
 		}
 	}
 
-	[HarmonyPatch(typeof(VerbProperties), "AdjustedMeleeDamageAmount_NewTmp")]
+	[HarmonyPatch(typeof(VerbProperties), "AdjustedMeleeDamageAmount", new Type[] { typeof(Tool), typeof(Pawn), typeof(ThingDef), typeof(ThingDef), typeof(HediffComp_VerbGiver) })]
 	public static class AdjustedBaseMeleeDamageAmount_NewTmp
 	{
 		private static void Postfix(ref float __result, Tool tool, Pawn attacker, ThingDef equipment, ThingDef equipmentStuff, HediffComp_VerbGiver hediffCompSource)

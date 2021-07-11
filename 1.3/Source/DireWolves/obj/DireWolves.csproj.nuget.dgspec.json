@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Games\\Rimworld\\Mods\\Dire-Wolves\\1.3\\Source\\DireWolves\\DireWolves.csproj": {}
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Dire-Wolves\\1.3\\Source\\DireWolves\\DireWolves.csproj": {}
   },
   "projects": {
-    "C:\\Games\\Rimworld\\Mods\\Dire-Wolves\\1.3\\Source\\DireWolves\\DireWolves.csproj": {
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Dire-Wolves\\1.3\\Source\\DireWolves\\DireWolves.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Games\\Rimworld\\Mods\\Dire-Wolves\\1.3\\Source\\DireWolves\\DireWolves.csproj",
+        "projectUniqueName": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Dire-Wolves\\1.3\\Source\\DireWolves\\DireWolves.csproj",
         "projectName": "DireWolves",
-        "projectPath": "C:\\Games\\Rimworld\\Mods\\Dire-Wolves\\1.3\\Source\\DireWolves\\DireWolves.csproj",
+        "projectPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Dire-Wolves\\1.3\\Source\\DireWolves\\DireWolves.csproj",
         "packagesPath": "C:\\Users\\Vova\\.nuget\\packages\\",
-        "outputPath": "C:\\Games\\Rimworld\\Mods\\Dire-Wolves\\1.3\\Source\\DireWolves\\obj\\",
+        "outputPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Dire-Wolves\\1.3\\Source\\DireWolves\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "configFilePaths": [
@@ -36,7 +36,7 @@
           "dependencies": {
             "Krafs.Rimworld.Ref": {
               "target": "Package",
-              "version": "[1.3.3050-beta, )"
+              "version": "[1.3.3056-beta, )"
             },
             "Lib.Harmony": {
               "target": "Package",
