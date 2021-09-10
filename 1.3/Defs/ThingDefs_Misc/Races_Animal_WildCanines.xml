@@ -104,7 +104,7 @@ A howl from the pack alpha will cause those who hear it, to become stunned with 
 			<baseBodySize>4</baseBodySize>
 			<baseHungerRate>1</baseHungerRate>
 			<baseHealthScale>10</baseHealthScale>
-			<foodType>CarnivoreAnimalStrict</foodType>
+			<foodType>OmnivoreAnimal</foodType>
 			<leatherDef>Leather_Wolf</leatherDef>
 			<gestationPeriodDays>60</gestationPeriodDays>
 			<nameOnTameChance>1</nameOnTameChance>
