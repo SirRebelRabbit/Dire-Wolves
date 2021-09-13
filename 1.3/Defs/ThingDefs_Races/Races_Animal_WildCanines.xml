@@ -181,7 +181,7 @@ A howl from the pack alpha will cause those who hear it, to become stunned with 
 				<bodyGraphicData>
 					<texPath>Things/Pawn/Animal/Garmr/Garmr</texPath>
 					<drawSize>4.7</drawSize>
-					<color>(123,104,89)</color>
+					<color>(240,240,240)</color>
 					<shadowData>
 						<volume>(0.25, 0.3, 0.25)</volume>
 						<offset>(0,0,-0.15)</offset>
@@ -196,7 +196,7 @@ A howl from the pack alpha will cause those who hear it, to become stunned with 
 				<bodyGraphicData>
 					<texPath>Things/Pawn/Animal/Garmr/Garmr</texPath>
 					<drawSize>5.05</drawSize>
-					<color>(123,104,89)</color>
+					<color>(240,240,240)</color>
 					<shadowData>
 						<volume>(0.3, 0.4, 0.3)</volume>
 						<offset>(0,0,-0.15)</offset>
@@ -208,6 +208,11 @@ A howl from the pack alpha will cause those who hear it, to become stunned with 
 				</dessicatedBodyGraphicData>
 			</li>
 		</lifeStages>
+		<alternateGraphicChance>0.8</alternateGraphicChance>
+			<alternateGraphics>
+			  <li><texPath>Things/Pawn/Animal/Garmr/FenrirMix</texPath></li>
+			  <li><texPath>Things/Pawn/Animal/Garmr/FenrirWhite</texPath></li>		  
+			</alternateGraphics>
 	</PawnKindDef>
 
 </Defs>

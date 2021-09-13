@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Def>
+<Defs>
 
 <ThingDef ParentName="LeatherBase">
     <defName>Leather_Garmr</defName>
@@ -25,4 +25,4 @@
     </stuffProps>
   </ThingDef>
 
-</Def>
+</Defs>
