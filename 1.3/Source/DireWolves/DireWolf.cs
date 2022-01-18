@@ -130,26 +130,26 @@ namespace DireWolves
 		private int lastHowlTick;
 		public bool CanHowl()
         {
-			return this.isPackLeader && (lastHowlTick <= 0 ||Find.TickManager.TicksGame >= lastHowlTick + DireWolvesMod.settings.howlingCooldownTicks);
+			return DireWolvesMod.settings.howlingEnabled && this.isPackLeader && (lastHowlTick <= 0 ||Find.TickManager.TicksGame >= lastHowlTick + DireWolvesMod.settings.howlingCooldownTicks);
 		}
 
 		public void DoHowl()
         {
 			var packMates = this.GetPackmates(24);
 			foreach (var pawn in GenRadial.RadialDistinctThingsAround(this.Position, this.Map, 25, true).OfType<Pawn>())
-            {
+			{
 				if (pawn.def != this.def)
-                {
+				{
 					if (Rand.Bool)
-                    {
+					{
 						MakeFlee(pawn, this, 15, packMates.Cast<Thing>().ToList());
 					}
 					else
-                    {
+					{
 						pawn.stances.stunner.StunFor(120, pawn);
-                    }
-                }
-            }
+					}
+				}
+			}
 			this.lastHowlTick = Find.TickManager.TicksGame;
 			var def = DefDatabase<AnimationDef>.GetNamed("DW_Mote_Howl");
 			MoteMaker.MakeStaticMote(this.DrawPos, this.Map, def);
@@ -167,7 +167,6 @@ namespace DireWolves
 			{
 				intVec = CellFinderLoose.GetFleeDest(pawn, dangers, 24f);
 			}
-
 			if (intVec == pawn.Position)
 			{
 				intVec = GenRadial.RadialCellsAround(pawn.Position, radius, radius * 2).RandomElement();

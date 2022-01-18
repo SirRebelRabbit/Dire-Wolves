@@ -108,10 +108,13 @@ namespace DireWolves
 		[HarmonyPriority(Priority.Last)]
 		private static void Postfix(ref bool __result, Pawn predator, Pawn prey)
 		{
-			if (predator is DireWolf && (prey.RaceProps.Humanlike || prey is DireWolf))
+			if (__result && predator is DireWolf wolf)
 			{
-				__result = false;
-			}
+				if (prey is DireWolf)
+					__result = false;
+				else if (prey.RaceProps.Humanlike || prey.Faction != null)
+					__result = false;
+            }
 		}
 	}
 }
